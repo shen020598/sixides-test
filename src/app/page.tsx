@@ -113,16 +113,16 @@ export default function Home() {
 				</button>
 			</div>
 			<div className='flex flex-row justify-center w-full flex-wrap mt-10'>
-				{genreList.map((item) => {
+				{genreList.map((item, index) => {
 					if (selectedGenre?.id === item.id) {
 						return (
-							<button onClick={() => setSelectedGenre(undefined)} className='rounded p-3  bg-slate-400 mx-3 my-2'>
+							<button key={index} onClick={() => setSelectedGenre(undefined)} className='rounded p-3  bg-slate-400 mx-3 my-2'>
 								{item.name}
 							</button>
 						);
 					}
 					return (
-						<button onClick={() => setSelectedGenre(item)} className='rounded p-3  bg-slate-200 mx-3 my-2'>
+						<button key={index} onClick={() => setSelectedGenre(item)} className='rounded p-3  bg-slate-200 mx-3 my-2'>
 							{item.name}
 						</button>
 					);
